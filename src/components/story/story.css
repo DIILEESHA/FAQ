@@ -15,6 +15,7 @@
 }
 .story {
   background-color: #fffef5;
+  overflow: hidden;
   padding: 30px 120px;
 }
 
