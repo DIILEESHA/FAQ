@@ -1,0 +1,334 @@
+.t_grids {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  /* margin: 0 auto; */
+  padding: 0px 450px;
+  /* display: flex; */
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.it_titles {
+  font-family: "alex";
+  text-align: center;
+  margin-top: 100px;
+
+  font-size: 80px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.salli {
+}
+
+.hehe {
+  width: 150px;
+  margin-bottom: -20px !important;
+}
+.event-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.it_subtitles {
+  font-family: "eb";
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 30px;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+}
+.it_subtitleo {
+  font-family: "btn";
+  text-align: center;
+  margin: 40px 0;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.it_subcolor {
+  font-family: "eb";
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+.lofz_img {
+  width: 30%;
+}
+.ghl {
+  background-color: #000;
+  color: #fff;
+}
+.travel_p {
+  font-family: "btn";
+  text-align: center;
+  font-size: 25px;
+  width: 50%;
+
+  line-height: 150%;
+  margin: 0 auto;
+}
+.travel_p2 {
+  font-family: "btn";
+  text-align: center;
+  font-size: 20px;
+  width: 80%;
+
+  line-height: 150%;
+  margin: 0 auto;
+}
+.gui_para {
+  font-family: "btn";
+  text-align: center;
+  width: 40%;
+  font-style: italic;
+  font-size: 20px;
+
+  margin: 0 auto 40px auto;
+  line-height: 150%;
+}
+.place_title {
+  font-family: "btn";
+  font-size: 20px;
+  text-align: center;
+  line-height: 150%;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+/* Add to wedding.css */
+
+/* Smooth transitions for animated elements */
+.it_img, .t_grids {
+  transition: transform 0.4s ease-out;
+  will-change: transform;
+}
+
+/* Hover effects */
+.t_grids:hover {
+  transform: translateY(-3px);
+}
+
+.it_img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Layout adjustments */
+.t_sub {
+  will-change: transform, opacity;
+}
+
+.its {
+  overflow: hidden;
+}
+
+/* Animation preparation */
+.it_title, .it_place, .it_date {
+  will-change: transform, opacity;
+}
+.place_grid {
+  margin-bottom: 30px;
+  padding: 0 30px;
+  /* margin-top: 70px; */
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr;
+  gap: 15px;
+}
+
+.place_sub:nth-child(1) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 1px solid #000;
+}
+
+.place_sub {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #fff;
+  justify-content: center;
+}
+.kpo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+/* For large desktops and laptops (1440px and below) */
+@media (max-width: 1440px) {
+  .t_grids {
+    padding: 0px 300px;
+  }
+}
+
+/* For tablets and small desktops (1024px and below) */
+@media (max-width: 1024px) {
+  .t_grids {
+    padding: 0px 200px;
+  }
+  
+  .it_titles {
+    font-size: 65px;
+    margin-top: 80px;
+  }
+  
+  .it_subtitles {
+    font-size: 26px;
+    letter-spacing: 3px;
+  }
+  
+  .travel_p {
+    width: 70%;
+    font-size: 22px;
+  }
+  
+  .travel_p2, .gui_para {
+    width: 70%;
+  }
+  
+  .place_grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* For large mobile devices (768px and below) */
+@media (max-width: 768px) {
+  .t_grids {
+    padding: 0px 100px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .it_titles {
+    font-size: 50px;
+    margin-top: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .it_subtitles {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .it_subtitleo {
+    font-size: 18px;
+    margin: 30px 0;
+  }
+  
+  .travel_p {
+    width: 80%;
+    font-size: 20px;
+  }
+  
+  .travel_p2, .gui_para {
+    width: 85%;
+    font-size: 18px;
+  }
+  
+  .place_grid {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 20px;
+  }
+  
+  .lofz_img {
+    width: 50%;
+  }
+  
+  .hehe {
+    width: 120px;
+  }
+}
+
+/* For most mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .t_grids {
+    padding: 0px 40px;
+  }
+  
+  .it_titles {
+    font-size: 36px;
+    margin-top: 50px;
+  }
+  
+  .it_subtitles {
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+  
+  .it_subtitleo {
+    font-size: 16px;
+    margin: 20px 0;
+  }
+  
+  .it_subcolor {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  
+  .travel_p {
+    width: 90%;
+    font-size: 18px;
+  }
+  
+  .travel_p2, .gui_para {
+    width: 95%;
+    font-size: 16px;
+  }
+  
+  .place_grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .place_sub {
+    padding: 15px;
+  }
+  
+  .place_title {
+    font-size: 16px;
+  }
+  
+  .lofz_img {
+    width: 70%;
+  }
+  
+  .hehe {
+    width: 100px;
+  }
+}
+
+/* For very small devices (360px and below) */
+@media (max-width: 360px) {
+  .t_grids {
+    padding: 0px 20px;
+  }
+  
+  .it_titles {
+    font-size: 30px;
+  }
+  
+  .it_subtitles {
+    font-size: 16px;
+  }
+  
+  .travel_p {
+    font-size: 16px;
+  }
+  
+  .travel_p2, .gui_para {
+    font-size: 14px;
+  }
+  
+  .hehe {
+    width: 80px;
+  }
+}

@@ -1,0 +1,236 @@
+.header_container {
+  height: 130vh;
+  background-image: url("../../assets/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 1% center;
+  position: relative;
+}
+
+.header_container::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.top_section {
+  padding-top: 250px;
+}
+.home_details {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  color: #eaeaea;
+}
+.top_p {
+  font-family: "ena";
+  font-family: "ebi";
+  margin-bottom: -30px;
+  font-size: 40px;
+  font-style: italic;
+}
+
+.couple_name {
+  font-family: "good";
+  font-size: 200px;
+  font-weight: 300;
+}
+
+.couple_name_section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.and {
+  margin-top: 29px;
+  font-size: 111px;
+}
+
+.rsvp_btn {
+  background-color: #eaeaea;
+  width: fit-content;
+  padding: 15px 40px;
+  size: 16px;
+  font-family: "poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-decoration: underline;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.ballo {
+  z-index: 10;
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+  padding: 20px 40px;
+}
+
+.nav_li {
+  list-style: none;
+  font-family: "btn";
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav_ul {
+  display: flex;
+  gap: 60px;
+}
+
+.size_img {
+  width: 200px;
+}
+
+/* Mobile Menu Styles */
+.mobile_menu_btn {
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.mobile_menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 99;
+  padding: 80px 20px;
+}
+
+.mobile_nav_ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0;
+}
+
+.mobile_nav_li {
+  list-style: none;
+  font-family: "btn";
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: #eaeaea;
+  text-align: center;
+}
+
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+  .couple_name {
+    font-size: 150px;
+  }
+
+  .size_img {
+    display: none;
+  }
+
+  .ballo {
+    padding: 20px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+  .and {
+    font-size: 90px;
+    margin-top: 22px;
+  }
+}
+
+/* For large mobile devices */
+@media (max-width: 768px) {
+  .couple_name {
+    font-size: 100px;
+  }
+
+  .top_section{
+    padding: 0;
+  }
+
+  .header_container,
+  .home_details {
+    min-height: 70vh;
+  }
+  .and {
+    font-size: 60px;
+    margin-top: 15px;
+  }
+  .top_p {
+    font-size: 30px;
+    margin-bottom: -20px;
+  }
+  .rsvp_btn {
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+
+  .desktop_nav {
+    display: none;
+  }
+
+  .mobile_menu_btn {
+    display: block;
+  }
+}
+
+/* For most mobile devices */
+@media (max-width: 480px) {
+  .couple_name {
+    font-size: 50px;
+  }
+  .couple_name_section {
+    gap: 15px;
+  }
+  .and {
+    font-size: 40px;
+    margin-top: 10px;
+  }
+  .top_p {
+    font-size: 24px;
+    margin-bottom: -15px;
+  }
+  .rsvp_btn {
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+  .header_container,
+  .home_details {
+    background-position: center center;
+    height: 70vh;
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 360px) {
+  .couple_name {
+    font-size: 50px;
+  }
+  .and {
+    font-size: 30px;
+  }
+  .top_p {
+    font-size: 20px;
+  }
+}
