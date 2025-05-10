@@ -171,7 +171,7 @@
 
   .header_container,
   .home_details {
-    min-height: 70vh;
+    min-height: 65vh;
   }
   .and {
     font-size: 60px;
@@ -179,7 +179,7 @@
   }
   .top_p {
     font-size: 30px;
-    margin-bottom: -20px;
+    margin-bottom: 10px;
   }
   .rsvp_btn {
     padding: 12px 30px;
@@ -209,16 +209,17 @@
   }
   .top_p {
     font-size: 24px;
-    margin-bottom: -15px;
+    margin-bottom: 15px;
   }
   .rsvp_btn {
+    margin-top: 20px;
     padding: 10px 25px;
     font-size: 16px;
   }
   .header_container,
   .home_details {
     background-position: center center;
-    height: 70vh;
+    height: 50vh;
   }
 }
 

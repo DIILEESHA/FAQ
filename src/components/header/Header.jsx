@@ -102,6 +102,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <motion.div
       className="header_container"
@@ -134,6 +138,7 @@ const Header = () => {
                   smooth={true}
                   offset={-70}
                   duration={500}
+                  onClick={handleNavClick}
                 >
                   {item.name}
                 </Link>
@@ -164,7 +169,7 @@ const Header = () => {
                 className="mobile_nav_li"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={toggleMenu}
+                onClick={handleNavClick}
               >
                 <Link
                   activeClass="active"

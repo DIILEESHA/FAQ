@@ -113,7 +113,7 @@ const Travel = () => {
         />
       </motion.div>
 
-      <motion.h2 className="it_title" variants={item}>
+      <motion.h2 className="it_title" id="faq" variants={item}>
         FAQ
       </motion.h2>
 
