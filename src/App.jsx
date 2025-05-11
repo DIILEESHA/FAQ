@@ -11,7 +11,7 @@ const { Title, Text } = Typography;
 const { Content } = Layout;
 
 // Password configuration
-const PASSWORD = "wedding123"; // Change this to your desired password
+const PASSWORD = "BKLove2026"; // Change this to your desired password
 const PASSWORD_LOCALSTORAGE_KEY = "wedding_auth";
 
 const ProtectedRoute = ({ children }) => {
