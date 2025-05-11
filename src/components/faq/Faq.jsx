@@ -210,8 +210,8 @@ const Travel = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <button className="rsvp_btn" onClick={handleRSVPClick}>
-          <Link to="/rsvp" className="a">
+        <button className="rsvp_btn" style={{color:"#000",background:"#fff"}} onClick={handleRSVPClick}>
+          <Link style={{color:"#000",background:"#fff"}} to="/rsvp" className="a">
             rsvp now
           </Link>
         </button>
