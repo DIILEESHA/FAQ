@@ -118,7 +118,7 @@ const Itinerary = () => {
       <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
         <motion.div className="t_sub malli">
           <motion.img
-            src="https://i.imgur.com/oOqPf6T.png"
+            src="https://i.imgur.com/D5eWGtx.png"
             alt="Welcome party icon"
             className="it_img2"
             variants={iconVariants}
@@ -148,7 +148,7 @@ const Itinerary = () => {
       <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
         <motion.div className="t_sub malli">
           <motion.img
-            src="https://i.imgur.com/ZZ8y4NV.png"
+            src="https://i.imgur.com/ochYnVT.png"
             alt="Wedding icon"
             className="it_img2"
             variants={iconVariants}

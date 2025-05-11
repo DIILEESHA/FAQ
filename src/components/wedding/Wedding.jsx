@@ -87,7 +87,7 @@ const Wedding = () => {
       <motion.div className="t_grids balpi" variants={timelineItem}>
         <motion.div className="t_sub malli" whileHover="hover">
           <motion.img
-            src="https://i.imgur.com/pM8qpk9.png"
+            src="https://i.imgur.com/GBN5LhQ.png"
             alt="Ceremony icon"
             className="it_img hehe"
             variants={iconVariants}
@@ -103,7 +103,7 @@ const Wedding = () => {
       <motion.div className="t_grids balpi" variants={timelineItem}>
         <motion.div className="t_sub malli" whileHover="hover">
           <motion.img
-            src="https://i.imgur.com/lyxlgoj.png"
+            src="https://i.imgur.com/nCPN3qQ.png"
             alt="Photos icon"
             className="it_img hehe"
             variants={iconVariants}
@@ -119,7 +119,7 @@ const Wedding = () => {
       <motion.div className="t_grids balpi" variants={timelineItem}>
         <motion.div className="t_sub malli" whileHover="hover">
           <motion.img
-            src="https://i.imgur.com/jANs0qq.png"
+            src="https://i.imgur.com/Svdt4um.png"
             alt="Cocktail icon"
             className="it_img hehe"
             variants={iconVariants}
@@ -135,7 +135,7 @@ const Wedding = () => {
       <motion.div className="t_grids balpi" variants={timelineItem}>
         <motion.div className="t_sub malli" whileHover="hover">
           <motion.img
-            src="https://i.imgur.com/xNDcT9E.png"
+            src="https://i.imgur.com/hz67k2C.png"
             alt="Reception icon"
             className="it_img hehe"
             variants={iconVariants}
@@ -151,7 +151,7 @@ const Wedding = () => {
       <motion.div className="t_grids balpi" variants={timelineItem}>
         <motion.div className="t_sub malli" whileHover="hover">
           <motion.img
-            src="https://i.imgur.com/XjJCxAY.png"
+            src="https://i.imgur.com/q0R79To.png"
             alt="Afterparty icon"
             className="it_img hehe"
             variants={iconVariants}
