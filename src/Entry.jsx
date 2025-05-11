@@ -11,6 +11,7 @@ import Faq from "./components/faq/Faq";
 import Two from "./components/details/Two";
 import Savely from "./components/save/Savely";
 import RSVPForm from "./components/RSVPForm";
+import Dolki from "./components/wedding/Dolki";
 
 const Entry = () => {
   return (
@@ -22,6 +23,7 @@ const Entry = () => {
       <Itinerary />
       <Wedding />
       <Pre />
+      <Dolki />
       <Travel />
       <Presence />
       <Two />

@@ -10,38 +10,7 @@ const Travel = () => {
 
   return (
     <div className="its ghl">
-      {/* First Section */}
-      <div className="gt">
-        <img
-          src="https://i.imgur.com/7J0wt8y.png"
-          alt=""
-          className="lofv_img"
-        />
-      </div>
-
-      <div id="travel">
-        <h2 className="it_title">Travel Information</h2>
-      </div>
-
-      <p className="travel_p">
-        Our dedicated travel concierge desk is here to make your trip to Cape
-        Town easy and stress-free.
-        <br />
-        <br />
-        Need a great place to stay? Help with airport transfers? Ideas for
-        things to do around Stellenbosch and Cape Town?
-        <br />
-        <br />
-        Please don't hesitate to contact the desk!
-        <br />
-        <br />
-        <a
-          style={{ color: "#fff" }}
-          href="mailto:Bemaandkwame@travelhouse.africa"
-        >
-          Bemaandkwame@travelhouse.africa
-        </a>
-      </p>
+   
 
       {/* Second Section */}
       <div className="gt">
