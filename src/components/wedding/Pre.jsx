@@ -9,7 +9,7 @@ const eventData = [
   },
   {
     title: "Welcome Party",
-    subtitle: "Dress code: Garden Chic",
+    subtitle: "Dress code: Dream in Pastels",
     subcolor: "pastel Colours",
     image: "https://i.imgur.com/n7r4DD1.png",
   },

@@ -108,11 +108,7 @@ const Travel = () => {
       answer:
         "Please RSVP by September 1st, 2025 so we can finalize arrangements. You can RSVP by visiting the RSVP page on our website or by clicking the link in your invitation.",
     },
-    {
-      question: "💬 Who can I contact with questions?",
-      answer:
-        "We’re here to help! Reach out via the Contact page or email us at bemaandkwamersvp@gmail.com with any questions about travel, accommodations, or the weekend schedule.",
-    },
+    
 
     {
       question: "🗺️ Excursions, Activities & Concierge Services",

@@ -116,20 +116,21 @@ const Travel = () => {
             </h2>
           </div>
         </div>
-        <div className="place_sub">
-          <div className="card">
-            <h2 className="place_title">
-              <a
-                href="https://www.asara.co.za/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                ASARA WINE ESTATE & HOTEL
-              </a>
-            </h2>
-          </div>
-        </div>
+     <div className="place_sub">
+  <div className="card">
+    <h2 className="place_title">
+      <a
+        href="https://coopmanhuijs.co.za/?_ga=2.41302247.49944973.1746993217-220014284.1746993213"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: "inherit", textDecoration: "none" }}
+      >
+        COOPMANHUIJS HOTEL
+      </a>
+    </h2>
+  </div>
+</div>
+
       </div>
 
       <p className="travel_p2">
