@@ -1,98 +1,29 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import "./wedding.css";
 import { Modal, Button } from "antd";
+import "./wedding.css";
 import pdfFile from "../../assets/yu.pdf";
+
 const Travel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // Animation variants
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        when: "beforeChildren",
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
-      },
-    },
-  };
-
-  const cardItem = {
-    hidden: { scale: 0.95, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 80,
-      },
-    },
-    hover: {
-      scale: 1.02,
-      transition: { duration: 0.2 },
-    },
-  };
-
-  const button = {
-    hidden: { scale: 0.9, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 150,
-        delay: 0.3,
-      },
-    },
-    hover: {
-      scale: 1.03,
-      transition: { duration: 0.2 },
-    },
-    tap: {
-      scale: 0.98,
-    },
-  };
-
   const showModal = () => setIsModalOpen(true);
   const handleCancel = () => setIsModalOpen(false);
 
   return (
-    <motion.div
-      className="its ghl"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100%" }}
-      variants={container}
-    >
+    <div className="its ghl">
       {/* First Section */}
-      <motion.div className="gt" variants={item}>
+      <div className="gt">
         <img
           src="https://i.imgur.com/7J0wt8y.png"
           alt=""
           className="lofv_img"
         />
-      </motion.div>
-
-      <div id="travel">
-        <motion.h2 className="it_title" variants={item}>
-          Travel Information
-        </motion.h2>
       </div>
 
-      <motion.p className="travel_p" variants={item}>
+      <div id="travel">
+        <h2 className="it_title">Travel Information</h2>
+      </div>
+
+      <p className="travel_p">
         Our dedicated travel concierge desk is here to make your trip to Cape
         Town easy and stress-free.
         <br />
@@ -110,42 +41,34 @@ const Travel = () => {
         >
           Bemaandkwame@travelhouse.africa
         </a>
-      </motion.p>
+      </p>
 
       {/* Second Section */}
-      <motion.div className="gt" variants={item}>
+      <div className="gt">
         <img
           src="https://i.imgur.com/7J0wt8y.png"
           alt=""
           className="lofv_img"
         />
-      </motion.div>
+      </div>
 
-      <motion.h2 className="it_title" id="stay" variants={item}>
+      <h2 className="it_title" id="stay">
         Where To Stay
-      </motion.h2>
+      </h2>
 
-      <motion.p className="gui_para" variants={item}>
+      <p className="gui_para">
         We've reserved rooms at some nearby hotels to make your stay as easy as
         possible.
-      </motion.p>
+      </p>
 
       {/* First Hotel Grid */}
-      <motion.div className="place_grid" variants={container}>
-        <motion.div
-          className="place_sub"
-          variants={cardItem}
-          whileHover="hover"
-        >
+      <div className="place_grid">
+        <div className="place_sub">
           <div className="card">
             <h2 className="place_title">CAPE TOWN</h2>
           </div>
-        </motion.div>
-        <motion.div
-          className="place_sub"
-          variants={cardItem}
-          whileHover="hover"
-        >
+        </div>
+        <div className="place_sub">
           <div className="card">
             <h2 className="place_title">
               <a
@@ -158,12 +81,8 @@ const Travel = () => {
               </a>
             </h2>
           </div>
-        </motion.div>
-        <motion.div
-          className="place_sub"
-          variants={cardItem}
-          whileHover="hover"
-        >
+        </div>
+        <div className="place_sub">
           <div className="card">
             <h2 className="place_title">
               <a
@@ -176,12 +95,8 @@ const Travel = () => {
               </a>
             </h2>
           </div>
-        </motion.div>
-        <motion.div
-          className="place_sub"
-          variants={cardItem}
-          whileHover="hover"
-        >
+        </div>
+        <div className="place_sub">
           <div className="card">
             <h2 className="place_title">
               <a
@@ -194,25 +109,17 @@ const Travel = () => {
               </a>
             </h2>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
       {/* Second Hotel Grid */}
-      <motion.div className="place_grid" variants={container}>
-        <motion.div
-          className="place_sub"
-          variants={cardItem}
-          whileHover="hover"
-        >
+      <div className="place_grid">
+        <div className="place_sub">
           <div className="card">
             <h2 className="place_title">STEllenbosch</h2>
           </div>
-        </motion.div>
-        <motion.div
-          className="place_sub"
-          variants={cardItem}
-          whileHover="hover"
-        >
+        </div>
+        <div className="place_sub">
           <div className="card">
             <h2 className="place_title">
               <a
@@ -225,12 +132,8 @@ const Travel = () => {
               </a>
             </h2>
           </div>
-        </motion.div>
-        <motion.div
-          className="place_sub"
-          variants={cardItem}
-          whileHover="hover"
-        >
+        </div>
+        <div className="place_sub">
           <div className="card">
             <h2 className="place_title">
               <a
@@ -243,12 +146,8 @@ const Travel = () => {
               </a>
             </h2>
           </div>
-        </motion.div>
-        <motion.div
-          className="place_sub"
-          variants={cardItem}
-          whileHover="hover"
-        >
+        </div>
+        <div className="place_sub">
           <div className="card">
             <h2 className="place_title">
               <a
@@ -261,10 +160,10 @@ const Travel = () => {
               </a>
             </h2>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
-      <motion.p className="travel_p2" variants={item}>
+      <p className="travel_p2">
         <i>
           For booking assistance contact:{" "}
           <a
@@ -277,17 +176,13 @@ const Travel = () => {
         <br />
         Office: +27 21 300 3493 <br />
         Karen: +27 83 383 1859
-      </motion.p>
-      <motion.div
-        className="kpo"
-        variants={button}
-        whileHover="hover"
-        whileTap="tap"
-      >
+      </p>
+
+      <div className="kpo">
         <button className="rsvp_btn" onClick={showModal}>
           CLICK HERE FOR MORE INFO
         </button>
-      </motion.div>
+      </div>
 
       {/* PDF Modal */}
       <Modal
@@ -312,7 +207,7 @@ const Travel = () => {
           style={{ border: "none" }}
         ></iframe>
       </Modal>
-    </motion.div>
+    </div>
   );
 };
 
