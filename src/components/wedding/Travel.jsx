@@ -86,7 +86,7 @@ const Travel = () => {
         />
       </motion.div>
 
-      <motion.h2 className="it_title" variants={item}>
+      <motion.h2 id="travel" className="it_title" variants={item}>
         Travel Information
       </motion.h2>
 
@@ -119,7 +119,7 @@ const Travel = () => {
         />
       </motion.div>
 
-      <motion.h2 className="it_title" id="Where To Stay" variants={item}>
+      <motion.h2 className="it_title" id="stay" variants={item}>
         Where To Stay
       </motion.h2>
 

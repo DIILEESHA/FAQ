@@ -91,7 +91,8 @@ const Header = () => {
     { name: "save the date", target: "save-the-date", type: "scroll" },
     { name: "the details", target: "details", type: "scroll" },
     { name: "our story", target: "story", type: "scroll" },
-    { name: "Where To Stay", target: "Where To Stay", type: "scroll" },
+    { name: "Where To Stay", target: "stay", type: "scroll" },
+    { name: "Travel Info", target: "travel", type: "scroll" },
     { name: "faq", target: "faq", type: "scroll" },
     { name: "rsvp", target: "/rsvp", type: "route" },
   ];

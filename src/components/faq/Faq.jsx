@@ -73,9 +73,9 @@ const Travel = () => {
         "Events will be hosted at beautiful venues around Cape Town and Stellenbosch. Full details will be shared closer to the date on our wedding website.",
     },
     {
-      question: "Recommended Options:",
+      question: "Where do I stay?",
       answer:
-        "Option 1: Stay in Cape Town through Sunday January 4th, then transfer to Stellenbosch on Monday morning. We recommend you request early check-in if possible.\n\nOption 2: Stay in Cape Town and travel to Stellenbosch on the wedding day Monday January 5th.\n\n(See “Staying in Cape Town & Traveling to Stellenbosch” for transport details.)",
+        "Recommended Options:\n\nOption 1: Stay in Cape Town through Sunday January 4th, then transfer to Stellenbosch on Monday morning. We recommend you request early check-in if possible.\n\nOption 2: Stay in Cape Town and travel to Stellenbosch on the wedding day Monday January 5th.\n\n(See “Staying in Cape Town & Traveling to Stellenbosch” for transport details.)",
     },
     {
       question: "What are the transportation options?",
@@ -101,7 +101,7 @@ const Travel = () => {
     {
       question: "📩 How do I RSVP?",
       answer:
-        "Please RSVP by September 1st, 2025 so we can finaliSe arrangements. You can RSVP by visiting the RSVP page on our website or by clicking the link in your invitation.",
+        "Please RSVP by September 1st, 2025 so we can finalize arrangements. You can RSVP by visiting the RSVP page on our website or by clicking the link in your invitation.",
     },
     {
       question: "💬 Who can I contact with questions?",
