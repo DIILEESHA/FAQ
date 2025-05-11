@@ -88,7 +88,7 @@ const Itinerary = () => {
       <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
         <motion.div className="t_sub malli">
           <motion.img
-            src="https://i.imgur.com/B7YNw1q.png"
+            src="https://i.imgur.com/YasLQlD.png"
             alt="Boat party icon"
             className="it_img"
             variants={iconVariants}
