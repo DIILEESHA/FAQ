@@ -108,7 +108,6 @@ const Travel = () => {
       answer:
         "Please RSVP by September 1st, 2025 so we can finalize arrangements. You can RSVP by visiting the RSVP page on our website or by clicking the link in your invitation.",
     },
-    
 
     {
       question: "🗺️ Excursions, Activities & Concierge Services",

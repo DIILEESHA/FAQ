@@ -87,12 +87,13 @@ const Presence = () => {
           <motion.button
             className="rsvp_btn nnn"
             variants={buttonVariants}
+            style={{ background: "#fff", color: "#000" }}
             whileHover="hover"
             whileTap="tap"
           >
             <a
               href="https://www.zola.com/registry/kwameandbema"
-              style={{ color: "inherit" }}
+              style={{ background: "#fff", color: "#000" }}
               target="_blank"
             >
               shop our registry
@@ -102,7 +103,11 @@ const Presence = () => {
       </div>
 
       <motion.div className="details_sub" variants={imageVariants}>
-        <img src="https://i.imgur.com/hTSimxo.jpeg" alt="Wedding invitation" className="detail_img" />
+        <img
+          src="https://i.imgur.com/hTSimxo.jpeg"
+          alt="Wedding invitation"
+          className="detail_img"
+        />
       </motion.div>
     </motion.div>
   );

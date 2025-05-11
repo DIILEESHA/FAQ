@@ -10,8 +10,6 @@ const Travel = () => {
 
   return (
     <div className="its ghl">
-   
-
       {/* Second Section */}
       <div className="gt">
         <img
@@ -116,21 +114,20 @@ const Travel = () => {
             </h2>
           </div>
         </div>
-     <div className="place_sub">
-  <div className="card">
-    <h2 className="place_title">
-      <a
-        href="https://coopmanhuijs.co.za/?_ga=2.41302247.49944973.1746993217-220014284.1746993213"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ color: "inherit", textDecoration: "none" }}
-      >
-        COOPMANHUIJS HOTEL
-      </a>
-    </h2>
-  </div>
-</div>
-
+        <div className="place_sub">
+          <div className="card">
+            <h2 className="place_title">
+              <a
+                href="https://coopmanhuijs.co.za/?_ga=2.41302247.49944973.1746993217-220014284.1746993213"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "inherit", textDecoration: "none" }}
+              >
+                COOPMANHUIJS HOTEL
+              </a>
+            </h2>
+          </div>
+        </div>
       </div>
 
       <p className="travel_p2">
@@ -149,7 +146,11 @@ const Travel = () => {
       </p>
 
       <div className="kpo">
-        <button className="rsvp_btn" onClick={showModal}>
+        <button
+          className="rsvp_btn"
+          style={{ background: "#fff", color: "#000" }}
+          onClick={showModal}
+        >
           CLICK HERE FOR MORE INFO
         </button>
       </div>

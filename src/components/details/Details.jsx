@@ -110,6 +110,7 @@ const Details = () => {
           to="itn" // Target the FAQ section
           spy={true}
           smooth={true}
+          style={{ color: "#000" }}
           offset={-70} // Adjust based on your header height
           duration={500}
         >
@@ -117,6 +118,7 @@ const Details = () => {
             className="rsvp_btn"
             variants={buttonVariants}
             whileHover="hover"
+            style={{ background: "#fff", color: "#000" }}
             whileTap="tap"
           >
             view details

@@ -37,6 +37,7 @@ const RSVPForm = () => {
     plusOneEmail: "",
     plusOnePhone: "",
     dietaryRequirements: "",
+    danceSong: "", // Added new field
     isAttending: null,
     hasPlusOne: null,
     groupFlightEmail: "",
@@ -44,6 +45,13 @@ const RSVPForm = () => {
     interestedInGroupFlight: null,
     attendingBoatParty: null,
   });
+
+  const arrivalDateOptions = [
+    "1st January 2026",
+    "2nd January 2026",
+    "3rd January 2026",
+    "4th January 2026"
+  ];
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -82,6 +90,7 @@ const RSVPForm = () => {
         plusOneEmail: "",
         plusOnePhone: "",
         dietaryRequirements: "",
+        danceSong: "",
         groupFlightEmail: "",
         groupFlightPhone: "",
         isAttending: null,
@@ -233,10 +242,11 @@ const RSVPForm = () => {
                     required
                   >
                     <option value="">--Select--</option>
-                    <option value="1st January 2026">1st January 2026</option>
-                    <option value="2nd January 2026">2nd January 2026</option>
-                    <option value="3rd January 2026">3rd January 2026</option>
-                    <option value="4th January 2026">4th January 2026</option>
+                    {arrivalDateOptions.map((date) => (
+                      <option key={date} value={date}>
+                        {date}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -410,6 +420,21 @@ const RSVPForm = () => {
                     onChange={handleChange}
                   />
                 </div>
+
+                {/* NEW QUESTION ADDED HERE */}
+                <div className="balpi">
+                  <label>
+                    What song will get you on the dance floor?
+                  </label>
+                  <input
+                    type="text"
+                    name="danceSong"
+                    value={formData.danceSong}
+                    onChange={handleChange}
+                    placeholder="Tell us your favorite dance song!"
+                  />
+                </div>
+
                 <div className="doti">
                   <Button
                     type="primary"

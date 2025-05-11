@@ -101,6 +101,12 @@ const AdminDashboard = () => {
       onFilter: (value, record) => record.hasPlusOne === value,
     },
     {
+      title: 'Dance Song',
+      dataIndex: 'danceSong',
+      key: 'danceSong',
+      render: (song) => song || 'N/A',
+    },
+    {
       title: 'Submitted At',
       dataIndex: 'submittedAt',
       key: 'submittedAt',
@@ -163,6 +169,7 @@ const AdminDashboard = () => {
       'Interested in Group Flight': rsvp.interestedInGroupFlight ? 'Yes' : 'No',
       'Flight Contact Email': rsvp.groupFlightEmail || 'N/A',
       'Flight Contact Phone': rsvp.groupFlightPhone || 'N/A',
+      'Dance Song': rsvp.danceSong || 'N/A',
       'Submitted At': new Date(rsvp.submittedAt).toLocaleString()
     }));
 
@@ -172,18 +179,19 @@ const AdminDashboard = () => {
     XLSX.writeFile(workbook, 'wedding_rsvps.xlsx');
   };
 
- const filteredData = rsvps.filter(rsvp =>
-  Object.values(rsvp).some(
-    value =>
-      value &&
-      value.toString().toLowerCase().includes(searchText.toLowerCase())
-  )
-);
+  const filteredData = rsvps.filter(rsvp =>
+    Object.values(rsvp).some(
+      value =>
+        value &&
+        value.toString().toLowerCase().includes(searchText.toLowerCase())
+    )
+  );
 
   const expandableRow = {
     expandedRowRender: (record) => (
       <div style={{ margin: 0 }}>
         <p><strong>Dietary Requirements:</strong> {record.dietaryRequirements || 'None'}</p>
+        <p><strong>Dance Song:</strong> {record.danceSong || 'Not specified'}</p>
         
         {record.hasPlusOne && (
           <>
