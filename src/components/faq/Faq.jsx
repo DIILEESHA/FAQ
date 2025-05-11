@@ -73,6 +73,11 @@ const Travel = () => {
         "Events will be hosted at beautiful venues around Cape Town and Stellenbosch. Full details will be shared closer to the date on our wedding website.",
     },
     {
+      question: "Can I bring a plus one?",
+      answer:
+        "Due to limited capacity, we are only able to accommodate guests who have received a formal invitation. If you wish to request a plus one, kindly complete the RSVP form for consideration.",
+    },
+    {
       question: "Where do I stay?",
       answer:
         " We’ve reserved room blocks at select hotels in Cape Town and Stellenbosch. Booking links are available on the Accommodation page. Airbnb is also a great option for groups or a more personal stay.January is peak season, so we recommend booking early!\n\nRecommended Options:\n\nOption 1: Stay in Cape Town through Sunday January 4th, then transfer to Stellenbosch on Monday morning. We recommend you request early check-in if possible.\n\nOption 2: Stay in Cape Town and travel to Stellenbosch on the wedding day Monday January 5th.\n\n(See “Staying in Cape Town & Traveling to Stellenbosch” for transport details.)",
@@ -117,7 +122,7 @@ const Travel = () => {
     {
       question: "Contact",
       answer:
-        " bemaandkwame@travelhouse.africa\n Our team can assist with curated recommendations, bookings, and general guidance to make your travel seamless and personalised.",
+        "  Our team can assist with curated recommendations, bookings, and general guidance to make your travel seamless and personalised.\n\n📩 Travel and accommodation:\nBemaandkwame@travelhouse.africa\n\n📧 General inquiries:\nInfo@bemaandkwame.com\n\n📞 Travel concierge desk:\n+27 (0) 21 300 3493 Office\n+27 (0) 83 383 1859 Karen",
     },
   ];
 

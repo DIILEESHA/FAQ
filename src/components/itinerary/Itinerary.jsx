@@ -85,34 +85,35 @@ const Itinerary = () => {
       </motion.h2>
 
       {/* Saturday Event */}
-      <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
-        <motion.div className="t_sub malli">
-          <motion.img
-            src="https://i.imgur.com/YasLQlD.png"
-            alt="Boat party icon"
-            className="it_img"
-            variants={iconVariants}
-            whileHover="hover"
-          />
-          <motion.p className="it_date" variants={item}>
-            Saturday 3rd January 2026
-          </motion.p>
-        </motion.div>
-        <motion.div className="t_sub salli" variants={container}>
-          <motion.h2 className="it_place" variants={item}>
-            sail before the veil
-          </motion.h2>
-          <motion.h3 className="time" variants={item}>
-            Pre-Wedding Boat Party [Limited Capacity]
-          </motion.h3>
-          <motion.h3 className="time" variants={item}>
-            Time: 18:00
-          </motion.h3>
-          <motion.h3 className="time" variants={item}>
-            V&A Waterfront, Capetown
-          </motion.h3>
-        </motion.div>
-      </motion.div>
+    <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
+  <motion.div className="t_sub malli">
+    <motion.img
+      src="https://i.imgur.com/YasLQlD.png"
+      alt="Boat party icon"
+      className="it_img"
+      variants={iconVariants}
+      whileHover="hover"
+    />
+    <motion.p className="it_date" variants={item}>
+      Saturday 3rd January 2026
+    </motion.p>
+  </motion.div>
+  <motion.div className="t_sub salli" variants={container}>
+    <motion.h2 className="it_place" variants={item}>
+      sail before the veil
+    </motion.h2>
+    <motion.h3 className="time" variants={item}>
+      Pre-Wedding Boat Party [Separate RSVP required]
+    </motion.h3>
+    <motion.h3 className="time" variants={item}>
+      Time: 18:00
+    </motion.h3>
+    <motion.h3 className="time" variants={item}>
+      V&A Waterfront, Capetown
+    </motion.h3>
+  </motion.div>
+</motion.div>
+
 
       {/* Sunday Event */}
       <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
@@ -145,34 +146,36 @@ const Itinerary = () => {
       </motion.div>
 
       {/* Monday Event */}
-      <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
-        <motion.div className="t_sub malli">
-          <motion.img
-            src="https://i.imgur.com/ochYnVT.png"
-            alt="Wedding icon"
-            className="it_img2"
-            variants={iconVariants}
-            whileHover="hover"
-          />
-          <motion.p className="it_date" variants={item}>
-            Monday 5th January 2026
-          </motion.p>
-        </motion.div>
-        <motion.div className="t_sub salli" variants={container}>
-          <motion.h2 className="it_place" variants={item}>
-            Forever starts here
-          </motion.h2>
-          <motion.h3 className="time" variants={item}>
-            Wedding Ceremony & Reception
-          </motion.h3>
-          <motion.h3 className="time" variants={item}>
-            Time: 16:00
-          </motion.h3>
-          <motion.h3 className="time" variants={item}>
-            Stellenbosch, South Africa
-          </motion.h3>
-        </motion.div>
-      </motion.div>
+     {/* Monday Event */}
+<motion.div className="t_grid" variants={timelineItem} whileHover="hover">
+  <motion.div className="t_sub malli">
+    <motion.img
+      src="https://i.imgur.com/ochYnVT.png"
+      alt="Wedding icon"
+      className="it_img2"
+      variants={iconVariants}
+      whileHover="hover"
+    />
+    <motion.p className="it_date" variants={item}>
+      Monday 5th January 2026
+    </motion.p>
+  </motion.div>
+  <motion.div className="t_sub salli" variants={container}>
+    <motion.h2 className="it_place" variants={item}>
+      Forever starts here
+    </motion.h2>
+    <motion.h3 className="time" variants={item}>
+      Wedding Ceremony & Reception
+    </motion.h3>
+    <motion.h3 className="time" variants={item}>
+      Time: 16:30
+    </motion.h3>
+    <motion.h3 className="time" variants={item}>
+      Stellenbosch, South Africa
+    </motion.h3>
+  </motion.div>
+</motion.div>
+
     </motion.div>
   );
 };

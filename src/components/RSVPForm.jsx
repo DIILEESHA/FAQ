@@ -274,7 +274,7 @@ const RSVPForm = () => {
                 )}
 
                 <div className="balpi">
-                  <p className="naki">Will you be bringing a plus one?</p>
+                  <p className="naki">Would you like to request a plus one</p>
                   <div className="so">
                     <label>
                       <input

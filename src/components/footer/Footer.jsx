@@ -1,5 +1,6 @@
 import React from "react";
 import "./footer.css";
+
 const Footer = () => {
   return (
     <div className="footly">
@@ -12,13 +13,22 @@ const Footer = () => {
           />
 
           <p className="footer_p">
-            <b>connect with us:</b>
+            <b>Contact Info:</b>
             <br />
-            Travel Desk: bemaandkwame@travelhouse.africa
+            Travel and accommodation: <br />
+            Bemaandkwame@travelhouse.africa
             <br />
-            Contact Number: +27(0)833831859
+            <br />
+            General inquiries: <br />
+            Info@bemaandkwame.com
+            <br />
+            <br />
+            Travel concierge desk: <br />
+            +27 (0) 21 300 3493 Office <br />
+            +27 (0) 83 383 1859 Karen
           </p>
         </div>
+
         <div className="footer_sub">
           <p className="other">
             Thank you for being a part of our love story. We can’t wait to
@@ -27,7 +37,13 @@ const Footer = () => {
         </div>
       </div>
 
-        <a className="dodo" style={{color:"#000"}} href="https://www.o-kconsulting.com/">© 2025 O-K Consulting</a>
+      <a
+        className="dodo"
+        style={{ color: "#000" }}
+        href="https://www.o-kconsulting.com/"
+      >
+        © 2025 O-K Consulting
+      </a>
     </div>
   );
 };
