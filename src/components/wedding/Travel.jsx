@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./wedding.css";
-
+import { Modal, Button } from "antd";
+import pdfFile from "../../assets/yu.pdf";
 const Travel = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // Animation variants
   const container = {
     hidden: { opacity: 0 },
@@ -10,9 +12,9 @@ const Travel = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        when: "beforeChildren"
-      }
-    }
+        when: "beforeChildren",
+      },
+    },
   };
 
   const item = {
@@ -23,9 +25,9 @@ const Travel = () => {
       transition: {
         type: "spring",
         stiffness: 100,
-        damping: 10
-      }
-    }
+        damping: 10,
+      },
+    },
   };
 
   const cardItem = {
@@ -35,13 +37,13 @@ const Travel = () => {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 80
-      }
+        stiffness: 80,
+      },
     },
     hover: {
       scale: 1.02,
-      transition: { duration: 0.2 }
-    }
+      transition: { duration: 0.2 },
+    },
   };
 
   const button = {
@@ -52,17 +54,20 @@ const Travel = () => {
       transition: {
         type: "spring",
         stiffness: 150,
-        delay: 0.3
-      }
+        delay: 0.3,
+      },
     },
     hover: {
       scale: 1.03,
-      transition: { duration: 0.2 }
+      transition: { duration: 0.2 },
     },
     tap: {
-      scale: 0.98
-    }
+      scale: 0.98,
+    },
   };
+
+  const showModal = () => setIsModalOpen(true);
+  const handleCancel = () => setIsModalOpen(false);
 
   return (
     <motion.div
@@ -114,7 +119,7 @@ const Travel = () => {
         />
       </motion.div>
 
-      <motion.h2 className="it_title" variants={item}>
+      <motion.h2 className="it_title" id="Where To Stay" variants={item}>
         Where To Stay
       </motion.h2>
 
@@ -125,12 +130,20 @@ const Travel = () => {
 
       {/* First Hotel Grid */}
       <motion.div className="place_grid" variants={container}>
-        <motion.div className="place_sub" variants={cardItem} whileHover="hover">
+        <motion.div
+          className="place_sub"
+          variants={cardItem}
+          whileHover="hover"
+        >
           <div className="card">
             <h2 className="place_title">CAPE TOWN</h2>
           </div>
         </motion.div>
-        <motion.div className="place_sub" variants={cardItem} whileHover="hover">
+        <motion.div
+          className="place_sub"
+          variants={cardItem}
+          whileHover="hover"
+        >
           <div className="card">
             <h2 className="place_title">
               <a
@@ -144,7 +157,11 @@ const Travel = () => {
             </h2>
           </div>
         </motion.div>
-        <motion.div className="place_sub" variants={cardItem} whileHover="hover">
+        <motion.div
+          className="place_sub"
+          variants={cardItem}
+          whileHover="hover"
+        >
           <div className="card">
             <h2 className="place_title">
               <a
@@ -158,7 +175,11 @@ const Travel = () => {
             </h2>
           </div>
         </motion.div>
-        <motion.div className="place_sub" variants={cardItem} whileHover="hover">
+        <motion.div
+          className="place_sub"
+          variants={cardItem}
+          whileHover="hover"
+        >
           <div className="card">
             <h2 className="place_title">
               <a
@@ -176,12 +197,20 @@ const Travel = () => {
 
       {/* Second Hotel Grid */}
       <motion.div className="place_grid" variants={container}>
-        <motion.div className="place_sub" variants={cardItem} whileHover="hover">
+        <motion.div
+          className="place_sub"
+          variants={cardItem}
+          whileHover="hover"
+        >
           <div className="card">
             <h2 className="place_title">STEllenbosch</h2>
           </div>
         </motion.div>
-        <motion.div className="place_sub" variants={cardItem} whileHover="hover">
+        <motion.div
+          className="place_sub"
+          variants={cardItem}
+          whileHover="hover"
+        >
           <div className="card">
             <h2 className="place_title">
               <a
@@ -195,7 +224,11 @@ const Travel = () => {
             </h2>
           </div>
         </motion.div>
-        <motion.div className="place_sub" variants={cardItem} whileHover="hover">
+        <motion.div
+          className="place_sub"
+          variants={cardItem}
+          whileHover="hover"
+        >
           <div className="card">
             <h2 className="place_title">
               <a
@@ -209,7 +242,11 @@ const Travel = () => {
             </h2>
           </div>
         </motion.div>
-        <motion.div className="place_sub" variants={cardItem} whileHover="hover">
+        <motion.div
+          className="place_sub"
+          variants={cardItem}
+          whileHover="hover"
+        >
           <div className="card">
             <h2 className="place_title">
               <a
@@ -239,10 +276,40 @@ const Travel = () => {
         Office: +27 21 300 3493 <br />
         Karen: +27 83 383 1859
       </motion.p>
-
-      <motion.div className="kpo" variants={button} whileHover="hover" whileTap="tap">
-        <button className="rsvp_btn">CLICK HERE FOR MORE INFO</button>
+      <motion.div
+        className="kpo"
+        variants={button}
+        whileHover="hover"
+        whileTap="tap"
+      >
+        <button className="rsvp_btn" onClick={showModal}>
+          CLICK HERE FOR MORE INFO
+        </button>
       </motion.div>
+
+      {/* PDF Modal */}
+      <Modal
+        title="More Information"
+        open={isModalOpen}
+        onCancel={handleCancel}
+        footer={[
+          <Button key="download" type="primary" href={pdfFile} download>
+            Download PDF
+          </Button>,
+          <Button key="close" onClick={handleCancel}>
+            Close
+          </Button>,
+        ]}
+        width={800}
+      >
+        <iframe
+          src={pdfFile}
+          width="100%"
+          height="500px"
+          title="PDF Preview"
+          style={{ border: "none" }}
+        ></iframe>
+      </Modal>
     </motion.div>
   );
 };

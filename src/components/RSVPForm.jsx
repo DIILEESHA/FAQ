@@ -25,6 +25,8 @@ const RSVPForm = () => {
   const [hasPlusOne, setHasPlusOne] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [interestedInGroupFlight, setInterestedInGroupFlight] = useState(null);
+  const [attendingBoatParty, setAttendingBoatParty] = useState(null);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -32,10 +34,15 @@ const RSVPForm = () => {
     phone: "",
     arrivalDate: "",
     plusOneName: "",
-    plusOneContact: "",
+    plusOneEmail: "",
+    plusOnePhone: "",
     dietaryRequirements: "",
     isAttending: null,
-    hasPlusOne: null
+    hasPlusOne: null,
+    groupFlightEmail: "",
+    groupFlightPhone: "",
+    interestedInGroupFlight: null,
+    attendingBoatParty: null
   });
 
   const handleChange = (e) => {
@@ -50,11 +57,13 @@ const RSVPForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Add form data with attendance and plus one status
+      // Add form data with all statuses
       const rsvpData = {
         ...formData,
         isAttending,
         hasPlusOne,
+        interestedInGroupFlight,
+        attendingBoatParty,
         submittedAt: new Date().toISOString()
       };
 
@@ -70,13 +79,20 @@ const RSVPForm = () => {
         phone: "",
         arrivalDate: "",
         plusOneName: "",
-        plusOneContact: "",
+        plusOneEmail: "",
+        plusOnePhone: "",
         dietaryRequirements: "",
+        groupFlightEmail: "",
+        groupFlightPhone: "",
         isAttending: null,
-        hasPlusOne: null
+        hasPlusOne: null,
+        interestedInGroupFlight: null,
+        attendingBoatParty: null
       });
       setIsAttending(null);
       setHasPlusOne(null);
+      setInterestedInGroupFlight(null);
+      setAttendingBoatParty(null);
       setIsSubmitted(true);
     } catch (error) {
       console.error("Error adding document: ", error);
@@ -220,34 +236,70 @@ const RSVPForm = () => {
                   </select>
                 </div>
 
+                {formData.arrivalDate && formData.arrivalDate.includes("1st January 2026") && (
+                  <div className="balpi">
+                    <p className="mals">Will you attend the pre-wedding boat party on 3rd January?</p>
+                    <div className="so">
+                      <label>
+                        <input
+                          type="radio"
+                          name="boatParty"
+                          value="yes"
+                          onChange={() => setAttendingBoatParty(true)}
+                          checked={attendingBoatParty === true}
+                        />
+                        Yes, I'll be there!
+                      </label>
+                      <label>
+                        <input
+                          type="radio"
+                          name="boatParty"
+                          value="no"
+                          onChange={() => setAttendingBoatParty(false)}
+                          checked={attendingBoatParty === false}
+                        />
+                        No, I can't make it
+                      </label>
+                    </div>
+                  </div>
+                )}
+
                 <div className="balpi">
                   <p className="naki">Will you be bringing a plus one?</p>
-                  <label>
-                    <input
-                      type="radio"
-                      name="plusOne"
-                      value="yes"
-                      onChange={() => setHasPlusOne(true)}
-                      checked={hasPlusOne === true}
-                    />
-                    Yes
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="plusOne"
-                      value="no"
-                      onChange={() => setHasPlusOne(false)}
-                      checked={hasPlusOne === false}
-                    />
-                    No
-                  </label>
+                  <div className="so">
+                    <label>
+                      <input
+                        type="radio"
+                        name="plusOne"
+                        value="yes"
+                        onChange={() => setHasPlusOne(true)}
+                        checked={hasPlusOne === true}
+                      />
+                      Yes
+                    </label>
+                    <label>
+                      <input
+                        type="radio"
+                        name="plusOne"
+                        value="no"
+                        onChange={() => setHasPlusOne(false)}
+                        checked={hasPlusOne === false}
+                      />
+                      No
+                    </label>
+                  </div>
+                  {hasPlusOne === true && (
+                    <p className="note-text">
+                      Note: We are only able to accommodate a limited number of plus ones, 
+                      all requests will be reviewed and confirmed shortly.
+                    </p>
+                  )}
                 </div>
 
                 {hasPlusOne && (
                   <>
                     <div className="balpi">
-                      <label>What is your plus one's full name?</label>
+                      <label>Plus One's Full Name:</label>
                       <input
                         type="text"
                         name="plusOneName"
@@ -258,13 +310,75 @@ const RSVPForm = () => {
                     </div>
 
                     <div className="balpi">
-                      <label>WhatsApp or Email of your plus one:</label>
+                      <label>Plus One's Email Address:</label>
                       <input
-                        type="text"
-                        name="plusOneContact"
-                        value={formData.plusOneContact}
+                        type="email"
+                        name="plusOneEmail"
+                        value={formData.plusOneEmail}
                         onChange={handleChange}
                         required
+                      />
+                    </div>
+
+                    <div className="balpi">
+                      <label>Plus One's Phone Number:</label>
+                      <input
+                        type="tel"
+                        name="plusOnePhone"
+                        value={formData.plusOnePhone}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </>
+                )}
+
+                <div className="balpi">
+                  <p className="mals">Would you be interested in a group booking flight discount using South African Airways from Accra to Cape Town?</p>
+                  <div className="so">
+                    <label>
+                      <input
+                        type="radio"
+                        name="groupFlight"
+                        value="yes"
+                        onChange={() => setInterestedInGroupFlight(true)}
+                        checked={interestedInGroupFlight === true}
+                      />
+                      Yes, I'm interested
+                    </label>
+                    <label>
+                      <input
+                        type="radio"
+                        name="groupFlight"
+                        value="no"
+                        onChange={() => setInterestedInGroupFlight(false)}
+                        checked={interestedInGroupFlight === false}
+                      />
+                      No, I'll make my own arrangements
+                    </label>
+                  </div>
+                </div>
+
+                {interestedInGroupFlight && (
+                  <>
+                    <div className="balpi">
+                      <label>Email for flight discount information:</label>
+                      <input
+                        type="email"
+                        name="groupFlightEmail"
+                        value={formData.groupFlightEmail}
+                        onChange={handleChange}
+                        required={interestedInGroupFlight}
+                      />
+                    </div>
+                    <div className="balpi">
+                      <label>Phone number for flight discount information:</label>
+                      <input
+                        type="tel"
+                        name="groupFlightPhone"
+                        value={formData.groupFlightPhone}
+                        onChange={handleChange}
+                        required={interestedInGroupFlight}
                       />
                     </div>
                   </>

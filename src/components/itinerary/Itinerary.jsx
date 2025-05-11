@@ -10,9 +10,9 @@ const Itinerary = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        when: "beforeChildren"
-      }
-    }
+        when: "beforeChildren",
+      },
+    },
   };
 
   const item = {
@@ -24,9 +24,9 @@ const Itinerary = () => {
         type: "spring",
         stiffness: 100,
         damping: 10,
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   const timelineItem = {
@@ -38,13 +38,13 @@ const Itinerary = () => {
         type: "spring",
         stiffness: 80,
         damping: 10,
-        staggerChildren: 0.1
-      }
+        staggerChildren: 0.1,
+      },
     },
     hover: {
       y: -5,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   const iconVariants = {
@@ -55,13 +55,13 @@ const Itinerary = () => {
       transition: {
         type: "spring",
         stiffness: 150,
-        damping: 10
-      }
+        damping: 10,
+      },
     },
     hover: {
       rotate: [0, 5, -5, 0],
-      transition: { duration: 0.6 }
-    }
+      transition: { duration: 0.6 },
+    },
   };
 
   return (
@@ -73,9 +73,9 @@ const Itinerary = () => {
       variants={container}
     >
       <motion.div className="gt" variants={item}>
-        <img 
-          src="https://i.imgur.com/vPfpYUb.png" 
-          alt="Divider" 
+        <img
+          src="https://i.imgur.com/vPfpYUb.png"
+          alt="Divider"
           className="lof_img"
         />
       </motion.div>
@@ -85,11 +85,7 @@ const Itinerary = () => {
       </motion.h2>
 
       {/* Saturday Event */}
-      <motion.div 
-        className="t_grid"
-        variants={timelineItem}
-        whileHover="hover"
-      >
+      <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
         <motion.div className="t_sub malli">
           <motion.img
             src="https://i.imgur.com/B7YNw1q.png"
@@ -119,11 +115,7 @@ const Itinerary = () => {
       </motion.div>
 
       {/* Sunday Event */}
-      <motion.div 
-        className="t_grid"
-        variants={timelineItem}
-        whileHover="hover"
-      >
+      <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
         <motion.div className="t_sub malli">
           <motion.img
             src="https://i.imgur.com/oOqPf6T.png"
@@ -153,11 +145,7 @@ const Itinerary = () => {
       </motion.div>
 
       {/* Monday Event */}
-      <motion.div 
-        className="t_grid"
-        variants={timelineItem}
-        whileHover="hover"
-      >
+      <motion.div className="t_grid" variants={timelineItem} whileHover="hover">
         <motion.div className="t_sub malli">
           <motion.img
             src="https://i.imgur.com/ZZ8y4NV.png"

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button, Input, Modal, Form, message, Card, Spin, Result } from 'antd';
+import { Table, Button, Input, Modal, Form, message, Card, Spin, Result, Tag } from 'antd';
 import { DownloadOutlined, LockOutlined } from '@ant-design/icons';
-import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import * as XLSX from 'xlsx';
 
-// Firebase configuration (same as before)
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCiT4jKLC41a9oCYS9WHbBnapFkWW7bDgM",
   authDomain: "gothya-9f271.firebaseapp.com",
@@ -26,8 +26,9 @@ const AdminDashboard = () => {
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showPasswordModal, setShowPasswordModal] = useState(true);
+  const [expandedRowKeys, setExpandedRowKeys] = useState([]);
 
-  // Password protection (replace with your secure password)
+  // Password protection
   const ADMIN_PASSWORD = 'BemaAndKwame2026'; // Change this to your actual password
 
   const columns = [
@@ -49,15 +50,34 @@ const AdminDashboard = () => {
       key: 'phone',
     },
     {
-      title: 'Attending',
-      dataIndex: 'isAttending',
-      key: 'isAttending',
-      render: (attending) => (attending ? 'Yes' : 'No'),
+      title: 'Status',
+      key: 'status',
+      render: (_, record) => (
+        <>
+          <Tag color={record.isAttending ? 'green' : 'red'}>
+            {record.isAttending ? 'Attending' : 'Not Attending'}
+          </Tag>
+          {record.attendingBoatParty && (
+            <Tag color="blue">Boat Party</Tag>
+          )}
+          {record.interestedInGroupFlight && (
+            <Tag color="orange">Flight Discount</Tag>
+          )}
+        </>
+      ),
       filters: [
-        { text: 'Yes', value: true },
-        { text: 'No', value: false },
+        { text: 'Attending', value: true },
+        { text: 'Not Attending', value: false },
+        { text: 'Boat Party', value: 'boat' },
+        { text: 'Flight Discount', value: 'flight' },
       ],
-      onFilter: (value, record) => record.isAttending === value,
+      onFilter: (value, record) => {
+        if (value === true) return record.isAttending;
+        if (value === false) return !record.isAttending;
+        if (value === 'boat') return record.attendingBoatParty;
+        if (value === 'flight') return record.interestedInGroupFlight;
+        return true;
+      },
     },
     {
       title: 'Arrival Date',
@@ -69,17 +89,16 @@ const AdminDashboard = () => {
       title: 'Plus One',
       dataIndex: 'hasPlusOne',
       key: 'hasPlusOne',
-      render: (plusOne) => (plusOne ? 'Yes' : 'No'),
+      render: (plusOne) => (
+        <Tag color={plusOne ? 'geekblue' : 'default'}>
+          {plusOne ? 'Yes' : 'No'}
+        </Tag>
+      ),
       filters: [
         { text: 'Yes', value: true },
         { text: 'No', value: false },
       ],
       onFilter: (value, record) => record.hasPlusOne === value,
-    },
-    {
-      title: 'Dietary Requirements',
-      dataIndex: 'dietaryRequirements',
-      key: 'dietaryRequirements',
     },
     {
       title: 'Submitted At',
@@ -128,7 +147,26 @@ const AdminDashboard = () => {
   };
 
   const exportToExcel = () => {
-    const worksheet = XLSX.utils.json_to_sheet(rsvps);
+    // Prepare data with all fields
+    const exportData = rsvps.map(rsvp => ({
+      'Full Name': rsvp.fullName,
+      'Email': rsvp.email,
+      'Phone': rsvp.phone,
+      'Attending': rsvp.isAttending ? 'Yes' : 'No',
+      'Arrival Date': rsvp.arrivalDate,
+      'Boat Party Attendance': rsvp.attendingBoatParty ? 'Yes' : 'No',
+      'Has Plus One': rsvp.hasPlusOne ? 'Yes' : 'No',
+      'Plus One Name': rsvp.plusOneName || 'N/A',
+      'Plus One Email': rsvp.plusOneEmail || 'N/A',
+      'Plus One Phone': rsvp.plusOnePhone || 'N/A',
+      'Dietary Requirements': rsvp.dietaryRequirements || 'None',
+      'Interested in Group Flight': rsvp.interestedInGroupFlight ? 'Yes' : 'No',
+      'Flight Contact Email': rsvp.groupFlightEmail || 'N/A',
+      'Flight Contact Phone': rsvp.groupFlightPhone || 'N/A',
+      'Submitted At': new Date(rsvp.submittedAt).toLocaleString()
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(exportData);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'RSVPs');
     XLSX.writeFile(workbook, 'wedding_rsvps.xlsx');
@@ -140,7 +178,48 @@ const AdminDashboard = () => {
       value &&
       value.toString().toLowerCase().includes(searchText.toLowerCase())
   )
-); 
+);
+
+  const expandableRow = {
+    expandedRowRender: (record) => (
+      <div style={{ margin: 0 }}>
+        <p><strong>Dietary Requirements:</strong> {record.dietaryRequirements || 'None'}</p>
+        
+        {record.hasPlusOne && (
+          <>
+            <p><strong>Plus One Details:</strong></p>
+            <ul>
+              <li>Name: {record.plusOneName}</li>
+              <li>Email: {record.plusOneEmail}</li>
+              <li>Phone: {record.plusOnePhone}</li>
+            </ul>
+          </>
+        )}
+
+        {record.interestedInGroupFlight && (
+          <>
+            <p><strong>Flight Discount Interest:</strong></p>
+            <ul>
+              <li>Contact Email: {record.groupFlightEmail}</li>
+              <li>Contact Phone: {record.groupFlightPhone}</li>
+            </ul>
+          </>
+        )}
+
+        {record.arrivalDate && record.arrivalDate.includes("1st January 2026") && (
+          <p><strong>Boat Party Attendance:</strong> {record.attendingBoatParty ? 'Yes' : 'No'}</p>
+        )}
+      </div>
+    ),
+    expandedRowKeys,
+    onExpand: (expanded, record) => {
+      if (expanded) {
+        setExpandedRowKeys([record.id]);
+      } else {
+        setExpandedRowKeys([]);
+      }
+    },
+  };
 
   if (!isAuthenticated) {
     return (
@@ -215,6 +294,7 @@ const AdminDashboard = () => {
             bordered
             size="middle"
             scroll={{ x: 'max-content' }}
+            expandable={expandableRow}
             pagination={{
               pageSize: 10,
               showSizeChanger: true,

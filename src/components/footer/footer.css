@@ -27,7 +27,7 @@
     padding: 30px 20px;
     gap: 40px;
   }
-  
+
   .footer_img {
     position: static;
     width: 200px;
@@ -47,3 +47,11 @@
     text-align: center;
   }
 }
+
+
+  .dodo {
+    padding: 10px!important;
+    display: flex;align-items: center;justify-content: center;
+    text-align: center;
+    font-size: 20px;
+  }

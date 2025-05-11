@@ -65,26 +65,31 @@ const Travel = () => {
     {
       question: "When should I arrive?",
       answer:
-        "We recommend arriving in Cape Town no later than midday on Sunday, January 4th, 2026.",
+        "We recommend arriving in Cape Town no later than midday on Sunday, January 4th, 2026. ",
     },
     {
       question: "Where is the wedding taking place?",
       answer:
-        "Events will be hosted at beautiful venues around Cape Town and Stellenbosch. Full details will be shared closer to the date on our wedding website.\n\nRecommended Options:\n\nOption 1: Stay in Cape Town through Sunday January 4th, then transfer to Stellenbosch on Monday morning. We recommend you request early check-in if possible.\n\nOption 2: Stay in Cape Town and travel to Stellenbosch on the wedding day Monday January 5th.\n\n(See 'Staying in Cape Town & Traveling to Stellenbosch' for transport details.)",
+        "Events will be hosted at beautiful venues around Cape Town and Stellenbosch. Full details will be shared closer to the date on our wedding website.",
+    },
+    {
+      question: "Recommended Options:",
+      answer:
+        "Option 1: Stay in Cape Town through Sunday January 4th, then transfer to Stellenbosch on Monday morning. We recommend you request early check-in if possible.\n\nOption 2: Stay in Cape Town and travel to Stellenbosch on the wedding day Monday January 5th.\n\n(See “Staying in Cape Town & Traveling to Stellenbosch” for transport details.)",
     },
     {
       question: "What are the transportation options?",
       answer:
-        "Cape Town is easy to navigate, and we want your travel to be stress-free. Here are your options:\n\n- Airport Transfers: Cape Town International Airport (CPT) is about 20–30 minutes from the city center. Taxis, Uber, and Bolt are readily available.\n\n- Rideshare: Uber and Bolt are reliable and widely used in Cape Town.\n\n- Car Rentals: Available at the airport and in the city. Driving is on the left-hand side of the road.\n\n- Shuttles for Wedding Events: We will provide group transportation to and from the wedding ceremony and reception in Stellenbosch. See below for more details.",
+        "Cape Town is easy to navigate, and we want your travel to be stress-free. Here are your options:\n- Airport Transfers: Cape Town International Airport (CPT) is about 20–30 minutes from the city center. Taxis, Uber, and Bolt are readily available.\n- Rideshare: Uber and Bolt are reliable and widely used in Cape Town.\n- Car Rentals: Available at the airport and in the city. Driving is on the left-hand side of the road.\n- Shuttles for Wedding Events: We will provide group transportation to and from the wedding ceremony and reception in Stellenbosch. See below for more details.",
     },
     {
       question:
         "Staying in Cape Town & Traveling to Stellenbosch (Wedding Day – Jan 4)",
       answer:
-        "If you're staying in Cape Town city center, we've got you covered for the wedding day:\n\n- Shuttle Service Provided: We will provide round-trip transportation between Cape Town (V&A Waterfront) and the wedding venue in Stellenbosch on Saturday, January 4th.\n\n - Pick-up & Drop-off Location: V&A Waterfront (exact location and times to be shared closer to the date)\n\n - Return shuttles will depart after the reception after the party ends.\n\n- Rideshare Option: If you prefer to travel independently, Uber and Bolt both operate between Cape Town and Stellenbosch. The journey takes approximately 45–60 minutes, depending on traffic.\n\n - Estimated cost: R400–R700 (approx. $20–$35 USD) one way.\n\n - We recommend scheduling your ride in advance, especially for the return trip at night.\n\n- Driving Yourself: If you plan to rent a car, Stellenbosch is about 50 km (31 miles) from Cape Town. The drive is scenic and straightforward via the N1 or N2 highways.",
+        "If you're staying in Cape Town city center, we’ve got you covered for the wedding day:\n- Shuttle Service Provided: We will provide round-trip transportation between Cape Town (V&A Waterfront) and the wedding venue in Stellenbosch on Saturday, January 4th.\n- Pick-up & Drop-off Location: V&A Waterfront (exact location and times to be shared closer to the date)\n- Return shuttles will depart after the reception after the party ends.\n- Rideshare Option: If you prefer to travel independently, Uber and Bolt both operate between Cape Town and Stellenbosch. The journey takes approximately 45–60 minutes, depending on traffic.\n - Estimated cost: R400–R700 (approx. $20–$35 USD) one way.\n - We recommend scheduling your ride in advance, especially for the return trip at night.\n- Driving Yourself: If you plan to rent a car, Stellenbosch is about 50 km (31 miles) from Cape Town. The drive is scenic and straightforward via the N1 or N2 highways. ",
     },
     {
-      question: "What's the weather like in January?",
+      question: "What’s the weather like in January?",
       answer:
         "Expect warm, sunny days with temperatures between 25°C and 30°C (77°F to 86°F). Evenings may be breezy, so bring a light layer.",
     },
@@ -101,12 +106,18 @@ const Travel = () => {
     {
       question: "💬 Who can I contact with questions?",
       answer:
-        "We're here to help! Reach out via the Contact page or email us at bemaandkwamersvp@gmail.com with any questions about travel, accommodations, or the weekend schedule.",
+        "We’re here to help! Reach out via the Contact page or email us at bemaandkwamersvp@gmail.com with any questions about travel, accommodations, or the weekend schedule.",
     },
+
     {
       question: "🗺️ Excursions, Activities & Concierge Services",
       answer:
-        "Looking to explore Cape Town, Stellenbosch, or other gems in the Western Cape during your visit? Whether you're interested in a safari, wine tasting, hiking Table Mountain, coastal drives, or cultural tours, we want your trip to be unforgettable.\n\nOur dedicated concierge service is available to help plan excursions, activities, and special experiences before or after the wedding weekend.\n\nContact:\n\nbemaandkwame@travelhouse.africa\n\nOur team can assist with curated recommendations, bookings, and general guidance to make your travel seamless and personalised.",
+        "Looking to explore Cape Town, Stellenbosch, or other gems in the Western Cape during your visit? Whether you’re interested in a safari, wine tasting, hiking Table Mountain, coastal drives, or cultural tours, we want your trip to be unforgettable.\n\n Our dedicated concierge service is available to help plan excursions, activities, and special experiences before or after the wedding weekend.",
+    },
+    {
+      question: "Contact",
+      answer:
+        " bemaandkwame@travelhouse.africa\n Our team can assist with curated recommendations, bookings, and general guidance to make your travel seamless and personalised.",
     },
   ];
 

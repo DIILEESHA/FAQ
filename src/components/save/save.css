@@ -1,134 +1,21 @@
-.saver {
-  width: 47%;
-  object-fit: contain;
-}
-
-.video_containers {
-  width: 100%;
+.videos {
   /* height: 100vh; */
-  position: relative;
-}
-
-.video_containers::after {
-  position: absolute;
-  content: "";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  inset: 0;
-  height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.fv {
-  /* z-index: 10; */
-  position: relative;
+.two_container {
+  overflow: hidden;
 }
 
-.text_d {
-  /* position: absolute; */
-  /* z-index: 9; */
+.videoly {
+  width: 100%;
+  object-fit: cover;
 }
 
-.custom_play_btn {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  background: rgba(0, 0, 0, 0.6);
-  width: 50px;
-  height: 50px;
-  display: flex;align-items: center;justify-content: center;
-  border: none;
-  color: white;
-  padding: 12px;
-  border-radius: 50%;
-  font-size: 16px;
-  cursor: pointer;
-  z-index: 2;
-}
-
-/* Show button on hover of the video container */
-.video_containers:hover .custom_play_btn {
-  opacity: 1;
-  visibility: visible;
-}
-
-.dorn {
-  position: absolute;
-  inset: 0;
-  min-height: 100vh;
-  display: flex;
-  top: -70px;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none; /* Allow hover through to parent */
-}
-
-/* Allow interaction with button */
-.custom_play_btn {
-  pointer-events: auto;
-}
-
-.custom_play_btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Tablet devices (768px - 1024px) */
-@media (max-width: 1024px) {
-  .saver {
-    width: 60%; /* Slightly larger on tablets */
-  }
-
-  .video_containers::after {
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.2
-    ); /* Darker overlay for better contrast */
-  }
-}
-
-/* Large mobile devices (481px - 767px) */
-@media (max-width: 767px) {
-  .saver {
-    width: 75%; /* Takes more width on smaller screens */
-  }
-
-  .video_containers {
-    height: 60vh; /* Compact video height */
-  }
-
-  .video_containers::after {
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.3
-    ); /* Even darker overlay for mobile visibility */
-  }
-}
-
-/* Most mobile devices (360px - 480px) */
-@media (max-width: 480px) {
-  .saver {
-    width: 85%; /* Nearly full width on small phones */
-  }
-
-  .video_containers {
-    height: 60vh; /* Compact video height */
-  }
-}
-
-/* Very small devices (below 360px) */
-@media (max-width: 359px) {
-  .saver {
-    width: 90%; /* Full-width appearance */
-  }
-
-  .video_containers {
-    height: 60vh; /* Compact video height */
+@media screen and (max-width: 760px) {
+  .videoly {
+    width: 100%;
+    /* height: 40vh; */
+    object-fit: contain;
   }
 }

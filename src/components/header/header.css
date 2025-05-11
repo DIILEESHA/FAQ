@@ -75,11 +75,11 @@
   z-index: 10;
   display: flex;
   position: absolute;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   color: #fff;
-  padding: 20px 40px;
+padding: 40px 0;
 }
 
 .nav_li {
@@ -148,10 +148,16 @@
 
   .ballo {
     padding: 20px;
-    background-color: #000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #000; */
     position: fixed;
     top: 0;
     z-index: 100;
+padding: 20px;
+
   }
   .and {
     font-size: 90px;
@@ -165,8 +171,13 @@
     font-size: 100px;
   }
 
-  .top_section{
+  .top_section {
     padding: 0;
+  }
+
+  .ballo {
+    justify-content: flex-end;
+    background-color: #000;
   }
 
   .header_container,

@@ -91,8 +91,9 @@ const Header = () => {
     { name: "save the date", target: "save-the-date", type: "scroll" },
     { name: "the details", target: "details", type: "scroll" },
     { name: "our story", target: "story", type: "scroll" },
-    { name: "rsvp", target: "/rsvp", type: "route" },
+    { name: "Where To Stay", target: "Where To Stay", type: "scroll" },
     { name: "faq", target: "faq", type: "scroll" },
+    { name: "rsvp", target: "/rsvp", type: "route" },
   ];
 
   const toggleMenu = () => {
@@ -118,13 +119,13 @@ const Header = () => {
       variants={container}
     >
       <div className="ballo">
-        <div className="size">
+        {/* <div className="size">
           <img
             src="https://i.imgur.com/vPfpYUb.png"
             alt=""
             className="size_img"
           />
-        </div>
+        </div> */}
 
         <div className="size desktop_nav">
           <ul className="nav_ul">
@@ -233,8 +234,14 @@ const Header = () => {
           variants={buttonItem}
           whileHover="hover"
           whileTap="tap"
+          style={{ color: "black", background: "#fff" }}
         >
-          <Link to="/rsvp" className="a" onClick={() => window.scrollTo(0, 0)}>
+          <Link
+            to="/rsvp"
+            className="a"
+            onClick={() => window.scrollTo(0, 0)}
+            style={{ color: "black", background: "#fff" }}
+          >
             rsvp now
           </Link>
         </motion.button>

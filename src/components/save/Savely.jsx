@@ -20,29 +20,11 @@ const Savely = () => {
 
   return (
     <div className="two_container">
-      <div className="video_containers" id="save-the-date">
-        <video
-          autoPlay
-          muted
-          loop
-          className="fv"
-          src={save}
-          ref={videoRef}
-        ></video>
-
-        {/* Play/Pause Button */}
+      <div className="videos">
+        <video src="https://i.imgur.com/iWYj6Bc.mp4" autoPlay  muted
+  loop controls className="videoly"></video>
 
 
-        <div className="dorn">
-
-        <button className="custom_play_btn" onClick={togglePlayPause}>
-          {isPlaying ? <FaPause /> : <FaPlay />}
-        </button>
-        </div>
-
-        <div className="text_d">
-          <img src="https://i.imgur.com/hXNnZlg.png" alt="" className="saver" />
-        </div>
       </div>
     </div>
   );
