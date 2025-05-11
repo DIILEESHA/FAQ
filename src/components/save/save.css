@@ -21,15 +21,73 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.fv {
+  /* z-index: 10; */
+  position: relative;
+}
+
+.text_d {
+  /* position: absolute; */
+  /* z-index: 9; */
+}
+
+.custom_play_btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.6);
+  width: 50px;
+  height: 50px;
+  display: flex;align-items: center;justify-content: center;
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Show button on hover of the video container */
+.video_containers:hover .custom_play_btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dorn {
+  position: absolute;
+  inset: 0;
+  min-height: 100vh;
+  display: flex;
+  top: -70px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Allow hover through to parent */
+}
+
+/* Allow interaction with button */
+.custom_play_btn {
+  pointer-events: auto;
+}
+
+.custom_play_btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
 /* Tablet devices (768px - 1024px) */
 @media (max-width: 1024px) {
   .saver {
     width: 60%; /* Slightly larger on tablets */
   }
-  
+
   .video_containers::after {
-    background-color: rgba(0, 0, 0, 0.2); /* Darker overlay for better contrast */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.2
+    ); /* Darker overlay for better contrast */
   }
 }
 
@@ -38,14 +96,18 @@
   .saver {
     width: 75%; /* Takes more width on smaller screens */
   }
-  
-  .video_containers {
-    height: 60vh /* Compact video height */
 
+  .video_containers {
+    height: 60vh; /* Compact video height */
   }
-  
+
   .video_containers::after {
-    background-color: rgba(0, 0, 0, 0.3); /* Even darker overlay for mobile visibility */
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.3
+    ); /* Even darker overlay for mobile visibility */
   }
 }
 
@@ -54,10 +116,9 @@
   .saver {
     width: 85%; /* Nearly full width on small phones */
   }
-  
-  .video_containers {
-    height: 60vh /* Compact video height */
 
+  .video_containers {
+    height: 60vh; /* Compact video height */
   }
 }
 
@@ -66,8 +127,8 @@
   .saver {
     width: 90%; /* Full-width appearance */
   }
-  
+
   .video_containers {
-    height: 60vh /* Compact video height */
+    height: 60vh; /* Compact video height */
   }
 }

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Animation variants
   const container = {
@@ -84,19 +86,14 @@ const Header = () => {
     },
   };
 
-  // Nav items data
+  // Nav items
   const navItems = [
-    { name: "save the date", target: "save-the-date" },
-    { name: "the details", target: "details" },
-    { name: "our story", target: "story" },
-    { name: "rsvp", target: "rsvp" },
-    { name: "faq", target: "faq" },
+    { name: "save the date", target: "save-the-date", type: "scroll" },
+    { name: "the details", target: "details", type: "scroll" },
+    { name: "our story", target: "story", type: "scroll" },
+    { name: "rsvp", target: "/rsvp", type: "route" },
+    { name: "faq", target: "faq", type: "scroll" },
   ];
-
-  // RSVP button click handler
-  const handleRSVPClick = () => {
-    window.open("https://bemaandkwameswedding.rsvpify.com/?securityToken=c2qGaQBHWdqdYSlnIbGdXCvgWAx1i7JE", "_blank");
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -104,6 +101,13 @@ const Header = () => {
 
   const handleNavClick = () => {
     setIsMenuOpen(false);
+  };
+
+  // Custom function for mobile RSVP click to scroll to top
+  const handleRSVPClick = () => {
+    setIsMenuOpen(false);
+    navigate("/rsvp");
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -125,23 +129,29 @@ const Header = () => {
         <div className="size desktop_nav">
           <ul className="nav_ul">
             {navItems.map((item, index) => (
-              <motion.li 
+              <motion.li
                 key={index}
                 className="nav_li"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
-                  activeClass="active"
-                  to={item.target}
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  onClick={handleNavClick}
-                >
-                  {item.name}
-                </Link>
+                {item.type === "scroll" ? (
+                  <ScrollLink
+                    activeClass="active"
+                    to={item.target}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    onClick={handleNavClick}
+                  >
+                    {item.name}
+                  </ScrollLink>
+                ) : (
+                  <Link className="a" to={item.target} onClick={handleNavClick}>
+                    {item.name}
+                  </Link>
+                )}
               </motion.li>
             ))}
           </ul>
@@ -164,23 +174,33 @@ const Header = () => {
         >
           <ul className="mobile_nav_ul">
             {navItems.map((item, index) => (
-              <motion.li 
+              <motion.li
                 key={index}
                 className="mobile_nav_li"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={handleNavClick}
               >
-                <Link
-                  activeClass="active"
-                  to={item.target}
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  {item.name}
-                </Link>
+                {item.type === "scroll" ? (
+                  <ScrollLink
+                    activeClass="active"
+                    to={item.target}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    onClick={handleNavClick}
+                  >
+                    {item.name}
+                  </ScrollLink>
+                ) : item.name === "rsvp" ? (
+                  <span onClick={handleRSVPClick} className="a">
+                    {item.name}
+                  </span>
+                ) : (
+                  <Link to={item.target} onClick={handleNavClick}>
+                    {item.name}
+                  </Link>
+                )}
               </motion.li>
             ))}
           </ul>
@@ -213,9 +233,10 @@ const Header = () => {
           variants={buttonItem}
           whileHover="hover"
           whileTap="tap"
-          onClick={handleRSVPClick}
         >
-          rsvp now
+          <Link to="/rsvp" className="a" onClick={() => window.scrollTo(0, 0)}>
+            rsvp now
+          </Link>
         </motion.button>
       </div>
     </motion.div>

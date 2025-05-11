@@ -1,0 +1,12 @@
+.rsvp-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15px 40px;
+}
+
+.rsvp_btn {
+  padding: 0; /* Remove padding since the link has it */
+}
