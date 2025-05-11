@@ -86,9 +86,11 @@ const Travel = () => {
         />
       </motion.div>
 
-      <motion.h2 id="travel" className="it_title" variants={item}>
-        Travel Information
-      </motion.h2>
+      <div id="travel">
+        <motion.h2 className="it_title" variants={item}>
+          Travel Information
+        </motion.h2>
+      </div>
 
       <motion.p className="travel_p" variants={item}>
         Our dedicated travel concierge desk is here to make your trip to Cape
