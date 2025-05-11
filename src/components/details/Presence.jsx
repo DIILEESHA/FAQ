@@ -91,7 +91,7 @@ const Presence = () => {
             whileTap="tap"
           >
             <a
-              href="https://www.weddingshop.com/Buy/View/241834"
+              href="https://www.zola.com/registry/kwameandbema"
               style={{ color: "inherit" }}
               target="_blank"
             >

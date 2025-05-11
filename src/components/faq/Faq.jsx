@@ -75,7 +75,7 @@ const Travel = () => {
     {
       question: "Where do I stay?",
       answer:
-        "Recommended Options:\n\nOption 1: Stay in Cape Town through Sunday January 4th, then transfer to Stellenbosch on Monday morning. We recommend you request early check-in if possible.\n\nOption 2: Stay in Cape Town and travel to Stellenbosch on the wedding day Monday January 5th.\n\n(See “Staying in Cape Town & Traveling to Stellenbosch” for transport details.)",
+        " We’ve reserved room blocks at select hotels in Cape Town and Stellenbosch. Booking links are available on the Accommodation page. Airbnb is also a great option for groups or a more personal stay.January is peak season, so we recommend booking early!\n\nRecommended Options:\n\nOption 1: Stay in Cape Town through Sunday January 4th, then transfer to Stellenbosch on Monday morning. We recommend you request early check-in if possible.\n\nOption 2: Stay in Cape Town and travel to Stellenbosch on the wedding day Monday January 5th.\n\n(See “Staying in Cape Town & Traveling to Stellenbosch” for transport details.)",
     },
     {
       question: "What are the transportation options?",
@@ -84,9 +84,9 @@ const Travel = () => {
     },
     {
       question:
-        "Staying in Cape Town & Traveling to Stellenbosch (Wedding Day – Jan 4)",
+        "Staying in Cape Town & Traveling to Stellenbosch (Wedding Day – Jan 5)",
       answer:
-        "If you're staying in Cape Town city center, we’ve got you covered for the wedding day:\n- Shuttle Service Provided: We will provide round-trip transportation between Cape Town (V&A Waterfront) and the wedding venue in Stellenbosch on Saturday, January 4th.\n- Pick-up & Drop-off Location: V&A Waterfront (exact location and times to be shared closer to the date)\n- Return shuttles will depart after the reception after the party ends.\n- Rideshare Option: If you prefer to travel independently, Uber and Bolt both operate between Cape Town and Stellenbosch. The journey takes approximately 45–60 minutes, depending on traffic.\n - Estimated cost: R400–R700 (approx. $20–$35 USD) one way.\n - We recommend scheduling your ride in advance, especially for the return trip at night.\n- Driving Yourself: If you plan to rent a car, Stellenbosch is about 50 km (31 miles) from Cape Town. The drive is scenic and straightforward via the N1 or N2 highways. ",
+        "If you're staying in Cape Town city center, we’ve got you covered for the wedding day:\n- Shuttle Service Provided: We will provide round-trip transportation between Cape Town (V&A Waterfront) and the wedding venue in Stellenbosch on Monday, 5th January.\n- Pick-up & Drop-off Location: V&A Waterfront (exact location and times to be shared closer to the date)\n- Return shuttles will depart after the reception after the party ends.\n- Rideshare Option: If you prefer to travel independently, Uber and Bolt both operate between Cape Town and Stellenbosch. The journey takes approximately 45–60 minutes, depending on traffic.\n - Estimated cost: R400–R700 (approx. $20–$35 USD) one way.\n - We recommend scheduling your ride in advance, especially for the return trip at night.\n- Driving Yourself: If you plan to rent a car, Stellenbosch is about 50 km (31 miles) from Cape Town. The drive is scenic and straightforward via the N1 or N2 highways. ",
     },
     {
       question: "What’s the weather like in January?",
@@ -210,8 +210,16 @@ const Travel = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <button className="rsvp_btn" style={{color:"#000",background:"#fff"}} onClick={handleRSVPClick}>
-          <Link style={{color:"#000",background:"#fff"}} to="/rsvp" className="a">
+        <button
+          className="rsvp_btn"
+          style={{ color: "#000", background: "#fff" }}
+          onClick={handleRSVPClick}
+        >
+          <Link
+            style={{ color: "#000", background: "#fff" }}
+            to="/rsvp"
+            className="a"
+          >
             rsvp now
           </Link>
         </button>

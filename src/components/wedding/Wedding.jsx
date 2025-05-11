@@ -93,7 +93,7 @@ const Wedding = () => {
             variants={iconVariants}
             whileHover="hover"
           />
-          <motion.p className="it_date" variants={item}>16:00 PM</motion.p>
+          <motion.p className="it_date" variants={item}>16:30 PM</motion.p>
         </motion.div>
         <motion.div className="t_sub salli" variants={item}>
           <h2 className="it_place">CEREMONY</h2>

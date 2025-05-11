@@ -41,6 +41,15 @@ const Dolki = () => {
         >
           Bemaandkwame@travelhouse.africa
         </a>
+        <br />
+        <br />
+        <strong>General inquiries:</strong>
+        <br />
+        <a style={{ color: "#fff" }} href="mailto:Info@bemaandkwame.com">
+          Info@bemaandkwame.com
+        </a>
+        <br />
+        <br />
       </p>
     </div>
   );

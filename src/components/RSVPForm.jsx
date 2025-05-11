@@ -13,7 +13,7 @@ const firebaseConfig = {
   projectId: "gothya-9f271",
   storageBucket: "gothya-9f271.appspot.com",
   messagingSenderId: "1009194076515",
-  appId: "1:1009194076515:web:54d98dd6e8d270ef026b56"
+  appId: "1:1009194076515:web:54d98dd6e8d270ef026b56",
 };
 
 // Initialize Firebase
@@ -42,7 +42,7 @@ const RSVPForm = () => {
     groupFlightEmail: "",
     groupFlightPhone: "",
     interestedInGroupFlight: null,
-    attendingBoatParty: null
+    attendingBoatParty: null,
   });
 
   const handleChange = (e) => {
@@ -64,14 +64,14 @@ const RSVPForm = () => {
         hasPlusOne,
         interestedInGroupFlight,
         attendingBoatParty,
-        submittedAt: new Date().toISOString()
+        submittedAt: new Date().toISOString(),
       };
 
       // Add document to Firestore
       const docRef = await addDoc(collection(db, "rsvps"), rsvpData);
-      
+
       console.log("Document written with ID: ", docRef.id);
-      
+
       // Reset form and show success state
       setFormData({
         fullName: "",
@@ -87,7 +87,7 @@ const RSVPForm = () => {
         isAttending: null,
         hasPlusOne: null,
         interestedInGroupFlight: null,
-        attendingBoatParty: null
+        attendingBoatParty: null,
       });
       setIsAttending(null);
       setHasPlusOne(null);
@@ -114,7 +114,7 @@ const RSVPForm = () => {
           <div className="home_siz">/</div>
           <div className="home_siz">Rsvp</div>
         </div>
-        
+
         <div className="ppp">
           <div className="dolk">
             <Result
@@ -122,9 +122,13 @@ const RSVPForm = () => {
               title="Thank You for Your RSVP!"
               subTitle="We've received your response and look forward to celebrating with you."
               extra={[
-                <Button style={{background:"#333"}} type="primary" key="home">
+                <Button
+                  style={{ background: "#333" }}
+                  type="primary"
+                  key="home"
+                >
                   <Link to="/">Return Home</Link>
-                </Button>
+                </Button>,
               ]}
             />
           </div>
@@ -236,9 +240,14 @@ const RSVPForm = () => {
                   </select>
                 </div>
 
-                {formData.arrivalDate && formData.arrivalDate.includes("1st January 2026") && (
+                {["1st January 2026", "2nd January 2026", "3rd January 2026"].includes(formData.arrivalDate) && (
                   <div className="balpi">
-                    <p className="mals">Will you attend the pre-wedding boat party on 3rd January?</p>
+                    <p className="mals">
+                      Will you attend the pre-wedding boat party on 3rd January? [Separate RSVP required]
+                    </p>
+                    <p className="note-text">
+                      *Limited Capacity: A boarding pass is required for entry. Our dedicated travel desk will issue your boarding pass once travel to Cape Town has been confirmed.
+                    </p>
                     <div className="so">
                       <label>
                         <input
@@ -290,8 +299,9 @@ const RSVPForm = () => {
                   </div>
                   {hasPlusOne === true && (
                     <p className="note-text">
-                      Note: We are only able to accommodate a limited number of plus ones, 
-                      all requests will be reviewed and confirmed shortly.
+                      Note: We are only able to accommodate a limited number of
+                      plus ones, all requests will be reviewed and confirmed
+                      shortly.
                     </p>
                   )}
                 </div>
@@ -334,7 +344,10 @@ const RSVPForm = () => {
                 )}
 
                 <div className="balpi">
-                  <p className="mals">Would you be interested in a group booking flight discount using South African Airways from Accra to Cape Town?</p>
+                  <p className="mals">
+                    Would you be interested in a group booking flight discount
+                    using South African Airways from Accra to Cape Town?
+                  </p>
                   <div className="so">
                     <label>
                       <input
@@ -372,7 +385,9 @@ const RSVPForm = () => {
                       />
                     </div>
                     <div className="balpi">
-                      <label>Phone number for flight discount information:</label>
+                      <label>
+                        Phone number for flight discount information:
+                      </label>
                       <input
                         type="tel"
                         name="groupFlightPhone"
@@ -396,17 +411,13 @@ const RSVPForm = () => {
                   />
                 </div>
                 <div className="doti">
-                  <Button 
-                    type="primary" 
+                  <Button
+                    type="primary"
                     htmlType="submit"
                     size="large"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? (
-                      <Spin size="small" />
-                    ) : (
-                      "Submit RSVP"
-                    )}
+                    {isSubmitting ? <Spin size="small" /> : "Submit RSVP"}
                   </Button>
                 </div>
               </form>

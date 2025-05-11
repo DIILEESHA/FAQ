@@ -103,7 +103,11 @@ textarea {
   font-size: 20px;
   margin-bottom: 10px;
 }
-
+.note-text{
+  margin: 10px 0;
+  font-family: "btn";
+  color: red;
+}
 .ppp label {
   font-family: "btn";
   font-size: 18px;
@@ -111,6 +115,8 @@ textarea {
 
 .naki {
   margin-bottom: 10px;
+  font-family: "btn";
+  font-size: 20px;
 }
 
 .so {

@@ -1,7 +1,22 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { Form, Input, Button, Modal, Card, Typography, Layout, theme } from 'antd';
-import { LockOutlined } from '@ant-design/icons';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+import { useState, useEffect } from "react";
+import {
+  Form,
+  Input,
+  Button,
+  Modal,
+  Card,
+  Typography,
+  Layout,
+  theme,
+} from "antd";
+import { LockOutlined } from "@ant-design/icons";
 import Footer from "./components/footer/Footer";
 import RSVPForm from "./components/RSVPForm";
 import AdminDashboard from "./components/wedding/AdminDashboard";
@@ -30,14 +45,18 @@ const ProtectedRoute = ({ children }) => {
     return null; // or a loading spinner
   }
 
-  return authenticated ? children : <Navigate to="/login" state={{ from: location }} replace />;
+  return authenticated ? (
+    children
+  ) : (
+    <Navigate to="/login" state={{ from: location }} replace />
+  );
 };
 
 const LoginPage = () => {
   const [form] = Form.useForm();
   const location = useLocation();
   const { token } = theme.useToken();
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (values) => {
     if (values.password === PASSWORD) {
@@ -45,55 +64,67 @@ const LoginPage = () => {
       window.location.href = from; // Full page reload to ensure state updates
     } else {
       Modal.error({
-        title: 'Incorrect Password',
-        content: 'The password you entered is incorrect. Please try again.',
+        title: "Incorrect Password",
+        content: "The password you entered is incorrect. Please try again.",
       });
     }
   };
 
   return (
-    <Layout style={{ minHeight: '100vh', background: token.colorBgContainer }}>
-      <Content style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Card
-          style={{ width: 400, textAlign: 'center', boxShadow: token.boxShadow }}
-          bordered={false}
-        >
-          <div style={{ marginBottom: 24 }}>
-            <LockOutlined style={{ fontSize: 48, color: token.colorPrimary }} />
-            <Title level={3} style={{ marginTop: 16 }}>Enter the password to view</Title>
-          </div>
+    <div
+      style={{
+        backgroundImage: "url('https://i.imgur.com/2EB0XUr.jpeg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Card
+        style={{
+          width: 400,
+          textAlign: "center",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          backdropFilter: "blur(5px)",
+        }}
+        bordered={false}
+      >
+        <div style={{ marginBottom: 24 }}>
+          <LockOutlined style={{ fontSize: 48, color: token.colorPrimary }} />
+          <Title level={3} style={{ marginTop: 16 }}>
+            Enter the password to view
+          </Title>
+        </div>
 
-          <Form
-            form={form}
-            layout="vertical"
-            onFinish={handleLogin}
+        <Form form={form} layout="vertical" onFinish={handleLogin}>
+          <Form.Item
+            name="password"
+            rules={[{ required: true, message: "Please enter the password" }]}
           >
-            <Form.Item
-              name="password"
-              rules={[{ required: true, message: 'Please enter the password' }]}
-            >
-              <Input.Password
-                prefix={<LockOutlined />}
-                placeholder="Wedding password"
-                size="large"
-              />
-            </Form.Item>
+            <Input.Password
+              prefix={<LockOutlined />}
+              placeholder="Wedding password"
+              size="large"
+            />
+          </Form.Item>
 
-            <Form.Item>
-              <Button
-              style={{color:"#fff",background:"#333"}}
-                // type="primary"
-                htmlType="submit"
-                block
-                size="large"
-              >
-            Continue
-              </Button>
-            </Form.Item>
-          </Form>
-        </Card>
-      </Content>
-    </Layout>
+          <Form.Item>
+            <Button
+              style={{ color: "#fff", background: "#333" }}
+              htmlType="submit"
+              block
+              size="large"
+            >
+              Continue
+            </Button>
+          </Form.Item>
+        </Form>
+      </Card>
+    </div>
   );
 };
 
@@ -102,26 +133,35 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-        
-        <Route path="/" element={
-          <ProtectedRoute>
-            <Entry />
-            <Footer />
-          </ProtectedRoute>
-        } />
-        
-        <Route path="/rsvp" element={
-          <ProtectedRoute>
-            <RSVPForm />
-            <Footer />
-          </ProtectedRoute>
-        } />
-        
-        <Route path="/admin" element={
-          <ProtectedRoute>
-            <AdminDashboard />
-          </ProtectedRoute>
-        } />
+
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Entry />
+              <Footer />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/rsvp"
+          element={
+            <ProtectedRoute>
+              <RSVPForm />
+              <Footer />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Redirect any unknown paths to home */}
         <Route path="*" element={<Navigate to="/" replace />} />
